@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<div class="row columns">
+  <a [routerLink]="['/login']"><button *ngIf="!(user | async)?.uid">Anonymous Login</button></a>
+  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+
+  <input type="text" id="message" *ngIf="(user | async)?.uid" placeholder="Add Discount" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+  <div id="details-container">
+      <p *ngFor="let item of items | async" style="background-image:url({{item.path}});">
+        {{item.title}}
+        <br>
+        <br>
+        {{item.company}}
+        <br>
+        {{item.description}}
+      </p>
+  </div>
+</div>
