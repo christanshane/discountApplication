@@ -7,6 +7,7 @@ import { Routes, ActivatedRoute } from '@angular/router';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseProvider } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
